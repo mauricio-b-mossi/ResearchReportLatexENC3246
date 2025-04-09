@@ -11,6 +11,7 @@
 \usepackage{hyperref} % For clickable links
 \usepackage{caption} % For figure and table captions
 \usepackage{subcaption} % For subfigures
+\usepackage{float}
 
 % --- Document Information ---
 \title{Research Report Title}
@@ -49,32 +50,38 @@ This section should introduce the research topic, provide necessary background i
 
 \subsection{Participants}
 \label{subsec:participants}
-This study draws on survey responses from a total of 43 college students, most of whom were enrolled at the University of Florida. While demographic details such as age and gender were not collected, participants were asked to identify their academic major by selecting from one of six broad categories: Engineering, Business, Liberal Arts and Sciences, Health Professions, Law Professions, and Agriculture. These groupings were chosen to represent a wide range of academic disciplines, although a limitation of this approach is that several distinct majors were aggregated into generalized categories. This may obscure more specific differences in AI usage patterns between majors within the same category.
+This study analyzed responses from a total of 43 college students, the majority of whom were enrolled at the University of Florida. While demographic details such as age and gender were not collected, participants were asked to self-identify their academic major by selecting one of six broad categories: Engineering, Business, Liberal Arts and Sciences, Health Professions, Law Professions, and Agriculture. These categories were chosen to capture a diverse range of academic disciplines. However, this categorization may have obscured differences between individual majors within a given category, presenting a limitation in the analysis of discipline-specific trends.
 
 \subsection{Instruments}
 \label{subsec:instruments}
-To investigate the central research question—how AI usage patterns vary among college students across academic disciplines—we designed a survey aimed at gathering both quantitative and qualitative data. The survey consisted of five questions developed to assess students’ frequency of AI usage, the types of tools they employ, the academic purposes for which they use AI, and their general attitudes and perceptions toward AI in educational contexts.
-The first question asked students to indicate their academic discipline by selecting one of the six aforementioned categories. The second question asked students to indicate how often they use AI tools for academic purposes, using a five-point Likert scale that ranged from 'never' to 'nearly every day. The third question allowed students to select from a range of AI tools and services they had used in academic contexts, such as writing assistance, productivity, or study aids. The fourth question asked students to identify the specific academic tasks for which they had used AI, which could include writing assignments, coding, studying for exams, or conducting research. The final question asked students to respond to a series of statements on a five-point Likert scale, where one represented strong disagreement and five represented strong agreement. These statements assessed students’ perceptions of AI’s impact on their learning experience, their access to AI tools, and whether they believe AI is especially useful in their specific field of study.
-These questions were selected to help identify trends in AI usage across and within academic fields, reveal which disciplines demonstrate higher engagement with AI tools, and provide insight into how students perceive AI’s usefulness, accessibility, and relevance to their academic work. The survey was intentionally designed to capture both behavior and perception, allowing for a more comprehensive understanding of student interaction with AI in the academic setting. A full copy of the survey instrument is provided in the Appendix.
+To examine how AI usage patterns differ across academic disciplines, a five-question survey was developed to collect both quantitative and qualitative data. The first question asked participants to indicate their academic discipline using the predefined categories. The second assessed the frequency of AI use for academic purposes, using a five-point Likert scale ranging from “never” to “daily.”
+The third question asked students to select from a list of AI tools and services they had used for academic purposes, including options such as ChatGPT, Grammarly, Claude, and others. The fourth question addressed the specific academic tasks for which students used AI, such as writing assignments, coding, research, or exam preparation.
+The final question consisted of three attitudinal statements rated on a five-point Likert scale, ranging from “strongly disagree” to “strongly agree”. These statements gauged students’ perceptions of AI’s educational value, accessibility, and its relevance to their particular field of study.
+Together, these items were designed to capture both the behaviors and perceptions of students engaging with AI tools in their academic work. A copy of the full survey is included in the Appendix.
+
 
 \subsection{Procedure}
 \label{subsec:procedure}
-The survey was created using Qualtrics. It was distributed electronically over the course of one week, using university-affiliated group chats and popular social media platforms. The goal was to maximize reach across various academic programs and ensure that students from different disciplines were aware of the study and encouraged to participate.
-After an initial round of distribution, it became clear that a large proportion of respondents came from engineering majors. In response to this imbalance, the team made deliberate efforts to reach students in the other disciplines outlined above. Despite these efforts, responses remained heavily skewed, with 46 percent of participants identifying as engineering majors. This overrepresentation presents a limitation in the generalizability of the findings and was taken into account during the analysis.
-After the data collection period concluded, the research team performed data cleaning and analysis using both Qualtrics and Python’s Pandas library. These tools allowed for a deeper exploration of the survey responses, enabling the team to identify patterns in AI usage, assess variations in student perceptions across academic disciplines, and draw informed conclusions about how AI tools are being incorporated into students’ academic routines. To facilitate comparisons between disciplines, the data was grouped by major category in Pandas and analyzed to highlight any notable differences in usage patterns and attitudes.
+The survey was administered through Qualtrics and distributed electronically over a one-week period. Recruitment was conducted via university-affiliated group chats and social media platforms to reach a wide range of students across disciplines.
+Early in the distribution process, it became evident that responses were heavily skewed toward Engineering majors. To address this imbalance, targeted efforts were made to gather more responses from underrepresented fields. Despite these efforts, Engineering remained overrepresented, accounting for 46% of the sample. This disproportion is acknowledged as a limitation when interpreting the findings.
+Following data collection, responses were cleaned and analyzed using both Qualtrics and Python’s Pandas library.
+
+
+
 
 % --- Results ---
 \section{Results}
-A total of 43 students responded to the survey, though not every participant answered every question. As a result, individual questions received between 37 and 43 responses. Among all respondents, 18 identified as Engineering majors, 11 as Liberal Arts and Sciences majors, 5 as Business majors, and 5 as Health Professions majors. The remaining 4 indicated that none of the listed categories described their major. This distribution is shown in Figure 1. 
+Of the 43 total respondents, Engineering students made up the largest group with 18 participants, followed by 11 from Liberal Arts and Sciences, 5 each from Business and Health Professions, and 4 whose majors did not align with the listed categories (Figure 1).
+
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.5\textwidth]{fig1.png} % Replace with your figure file name
+  \includegraphics[width=0.6\textwidth]{fig1.png} % Replace with your figure file name
   \caption{A brief description of the figure.}
   \label{fig:example1}
 \end{figure}
 
-In response to the question about the frequency of AI tool use for academic purposes, all respondents indicated some level of regular use. The most common response was “a few times per week,” selected by 15 participants. This was followed by “nearly every day” (9 respondents), “daily” (7 respondents), and “at least once a week” (7 respondents). No respondents selected “never” or “a few times a month.” These responses are summarized in Figure 2. 
+All participants reported using AI tools for academic purposes at least a few times per month. The most common frequency was “a few times per week,” selected by 15 participants. Nine reported using AI “nearly every day,” seven used it “daily,” and another seven indicated use “at least once a week.” No respondents selected “never” or “a few times a month,” indicating consistent and regular engagement with AI tools across the sample (Figure 2).
 
 \begin{figure}[htbp]
   \centering
@@ -83,19 +90,19 @@ In response to the question about the frequency of AI tool use for academic purp
   \label{fig:example1}
 \end{figure}
 
-When asked to select all AI tools and services used for academic purposes, 97\% (38 respondents) reported using ChatGPT, making it the most commonly used tool. Gemini was selected by 46\% (18 respondents), Grammarly AI by 26\% (10 respondents), Claude by 23\% (9 respondents), DALL-E by 15\% (6 respondents), DeepSeek by 13\% (5 respondents), and both Grok and GitHub Copilot by 3\% (1 respondent each). These trends are visualized in Figure 3. 
+ChatGPT was by far the most widely used tool, reported by 38 out of 39 respondents (97\%). Gemini followed at 46\%, with other tools including Grammarly AI (26\%), Claude (23\%), DALL·E (15\%), and DeepSeek (13\%). Grok and GitHub Copilot were the least used, each mentioned by only one respondent (3\%) (Figure 3).
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.7\textwidth]{fig3.png} % Replace with your figure file name
+  \includegraphics[width=0.65\textwidth]{fig3.png} % Replace with your figure file name
   \caption{A brief description of the figure.}
   \label{fig:example1}
 \end{figure}
 
-Breakdowns by academic major are presented in Figure 4. Among Engineering majors, 94.4\% (17 of 18) reported using ChatGPT, 38.9\% (7) used Gemini, and 27.8\% (5) used Claude. Among Liberal Arts and Sciences majors, all 11 respondents (100\%) reported using ChatGPT, while 45.5\% (5) used Gemini and 27.3\% (3) used Grammarly AI. Results for Business and Health Professions majors are also included but should be considered in light of the smaller sample sizes (n = 5 each). 
+Breakdowns of AI tool usage by major (Figure 4) suggested differences in tool preference across disciplines. Among Engineering majors, 94\% reported using ChatGPT, with 39\% using Gemini and 28\% using Claude. In Liberal Arts and Sciences, all 11 participants reported using ChatGPT, 46\% used Gemini, and 27\% used Grammarly. While these patterns suggest some variation, limited sample sizes in several categories constrain broader generalizations.
 
 % Example of two subfigures side-by-side
-\begin{figure}[htbp]
+\begin{figure}[H]
   \centering
   \begin{subfigure}[b]{0.45\textwidth}
     \includegraphics[width=\textwidth]{fig4-1.png} % Replace with your first subfigure file name
@@ -124,7 +131,9 @@ Breakdowns by academic major are presented in Figure 4. Among Engineering majors
   \label{fig:subfigures1}
 \end{figure}
 
-Participants were also asked to select academic tasks for which they use AI tools. The most commonly selected task was writing and editing, chosen by 87\% (34 respondents). Other frequently selected tasks included research and information gathering (74\%), studying and note-taking (62\%, 24 respondents), math and problem solving (59\%, 23 respondents), and career and professional development (46\%, 18 respondents). Coding was selected by 41\% (16 respondents), productivity and organization by 26\% (10 respondents), data analysis and visualization by 21\% (8 respondents), and presentation and content creation by 18\% (7 respondents). These task-based results are broken down by major in Figure 6. 
+
+Participants reported using AI for a wide variety of academic tasks. Writing and editing was the most frequently cited use, selected by 87\% of respondents. Other common applications included research and information gathering (74\%), studying and note-taking (62\%), and math or problem solving (59\%). Additional uses included career development (46\%), coding (41\%), productivity and organization (26\%), data analysis (21\%), and content creation (18\%) (Figure 5).
+
 
 \begin{figure}[htbp]
   \centering
@@ -133,9 +142,10 @@ Participants were also asked to select academic tasks for which they use AI tool
   \label{fig:example1}
 \end{figure}
 
+Figure 6 provides further detail on how usage patterns differed by academic discipline. For example, coding was a more frequent use case among Engineering majors, while writing and research were broadly cited across all fields.
 
 % Example of two subfigures side-by-side
-\begin{figure}[htbp]
+\begin{figure}[H]
   \centering
   \begin{subfigure}[b]{0.45\textwidth}
     \includegraphics[width=\textwidth]{fig6-1.png} % Replace with your first subfigure file name
@@ -165,8 +175,34 @@ Participants were also asked to select academic tasks for which they use AI tool
 \end{figure}
 
 
-The survey also included three attitudinal statements, each rated on a Likert scale from “strongly disagree” to “strongly agree.” In response to the statement “AI improves my learning experience as a student,” 19 participants strongly agreed, 13 somewhat agreed, 4 neither agreed nor disagreed, 2 somewhat disagreed, and 1 strongly disagreed (Figure 7). For the statement “AI tools are accessible to me,” 23 participants strongly agreed, 15 somewhat agreed, and 2 neither agreed nor disagreed (Figure 8). Responses to the statement “AI tools are more beneficial in my field of study compared to others” were more mixed: 17 selected “neither agree nor disagree,” 10 somewhat agreed, 9 strongly agreed, and 4 somewhat disagreed (Figure 9). A breakdown of responses by academic discipline is presented in the Discussion and Conclusion section.
+The survey also included three attitudinal statements rated on a five-point Likert scale. In response to “AI improves my learning experience as a student,” 19 participants strongly agreed, 13 somewhat agreed, 4 neither agreed nor disagreed, 2 somewhat disagreed, and 1 strongly disagreed (Figure 11).
 
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.65\textwidth]{fig7-1.png} % Replace with your figure file name
+  \caption{A brief description of the figure.}
+  \label{fig:example1}
+\end{figure}
+
+For “AI tools are accessible to me,” responses were predominantly positive: 23 strongly agreed, 15 somewhat agreed, and 2 neither agreed nor disagreed (Figure 12).
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.8\textwidth]{fig7-2.png} % Replace with your figure file name
+  \caption{A brief description of the figure.}
+  \label{fig:example1}
+\end{figure}
+
+The final statement, “AI tools are more beneficial in my field of study compared to others,” yielded more mixed results: 17 selected “neither agree nor disagree,” 10 somewhat agreed, 9 strongly agreed, and 4 somewhat disagreed (Figure 13).
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.8\textwidth]{fig7-3.png} % Replace with your figure file name
+  \caption{A brief description of the figure.}
+  \label{fig:example1}
+\end{figure}
+
+A more detailed analysis of attitudinal differences by academic field is presented in the Discussion and Conclusion section.
 
 \subsection{Textual Description of Results}
 Describe the main findings in words.
